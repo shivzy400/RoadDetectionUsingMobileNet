@@ -18,4 +18,4 @@ Dependencies:-
 ==========================================================
 Other Information :_
 1) MobileNet version : 1.00.224
-2)Accuracy : 0.998
+2) Accuracy : 0.998
