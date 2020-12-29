@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+ 
+    
+    <form action="/result" name="form" class="form-container" method="POST"  enctype="multipart/form-data">
+        <input type="file" name="inpFile" id="inpFile" accept="image/*"/>
+        <label for="inpFile" class="btn btn-success form-btn">
+            Choose Image
+        </label>
+        <div class="image-preview" id="imagePreview">
+            <img src="" class="image-preview__image">
+            <span class="image-preview__text">Press Choose File</span>
+        </div>
+        <div class="btn-container">
+            <input type="submit" value="Predict" onclick="showLoader()" class="btn btn-success form-btn">
+            <div class="loader" id="loader"></div>
+        </div>
+        
+    </form>
+{% endblock %}
+    
