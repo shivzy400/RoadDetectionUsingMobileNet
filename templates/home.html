@@ -2,7 +2,7 @@
 {% block content %}
 
  
-    
+    <div class="image-container">
     <form action="/result" name="form" class="form-container" method="POST"  enctype="multipart/form-data">
         <input type="file" name="inpFile" id="inpFile" accept="image/*"/>
         <label for="inpFile" class="btn btn-success form-btn">
@@ -16,7 +16,7 @@
             <input type="submit" value="Predict" onclick="showLoader()" class="btn btn-success form-btn">
             <div class="loader" id="loader"></div>
         </div>
-        
     </form>
+    </div>
 {% endblock %}
     

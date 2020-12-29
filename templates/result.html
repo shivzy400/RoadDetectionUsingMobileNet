@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <span>Result : {{ result }}</span> <br>
-    <span>Confidence Level : {{ confidence }}</span>
+    {% if flag == 1 %}
+    <div class="result-container">
+        <span>Result : {{ result }}</span> <br>
+        <span>Confidence Level : {{ confidence }}</span>
+    
+    </div>
+    {% else %}
+        <span style="color: red;font-size: 18px;">File Not Found</span>
+    {% endif %}
 
 {% endblock %}

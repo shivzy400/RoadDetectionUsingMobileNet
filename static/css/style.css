@@ -6,16 +6,13 @@ body {
   height: auto;
   background: green;
   margin: auto;
-  padding: 1%;
-  padding-left: 5px;
-  padding-bottom: 0px;
   color:#ffffff;
   cursor: pointer;
 
 }
 .image-preview {
-  width: 20%;
-  min-height: 150px;
+  width: 100%;
+  min-height: 300px;
   border: 2px solid #dddddd;
   margin-top: 3%;
   display: flex;
@@ -30,6 +27,7 @@ body {
 
 .form-container {
   padding : 1%;
+  width: 100%;
 }
 .form-btn {
   float:left; 
@@ -49,7 +47,11 @@ label {
 .btn-container {
   margin-top: 1%;
 }
+.image-container {
+  width: 30%;
+  height: 20%;
 
+}
 .loader {
   border: 5px solid #f3f3f3;
   border-radius: 50%;
@@ -73,4 +75,14 @@ label {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.result-container {
+    padding: 3%;
+    margin: 1%;
+    width: 25%;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #4d4d4d;
 }

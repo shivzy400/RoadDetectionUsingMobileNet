@@ -20,7 +20,7 @@ def model_predict(img_file) :
     confidence = max(model.predict(prep_img)[0])
     return prediction , confidence
 
-from flask import Flask, redirect, url_for, request, render_template
+from flask import Flask, redirect, url_for, request, render_template , redirect ,flash
 app = Flask(__name__)
 
 @app.route('/',methods=['GET'])
@@ -32,15 +32,20 @@ def index():
 def upload_file():
    if request.method == 'POST':
       f = request.files['inpFile']
-      file_path = os.path.join(
-            BASE_DIR, 'uploads', secure_filename(f.filename))
-      f.save(file_path)
-      pred ,confidence  = model_predict(file_path)
-      if pred == 0 :
-          result = 'Image has No Road'
-      elif pred == 1 :
-          result = 'Image has Road'
-      return render_template('result.html',result = result , confidence = confidence)
+      if f :
+        file_path = os.path.join(
+                BASE_DIR, 'uploads', secure_filename(f.filename))
+        f.save(file_path)
+        pred ,confidence  = model_predict(file_path)
+        if pred == 0 :
+            result = 'Image has No Road'
+        elif pred == 1 :
+            result = 'Image has Road'
+        return render_template('result.html',result = result , confidence = confidence , flag=1)
+
+      else :
+          message = "File Not Found"
+          return render_template('result.html' , message = message , flag=0)
 
 
 
