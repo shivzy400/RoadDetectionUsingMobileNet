@@ -3,6 +3,7 @@ body {
 }
 .header-container {
   width: 100%;
+  padding:1%;
   height: auto;
   background: green;
   margin: auto;
