@@ -10,11 +10,12 @@ Steps :-
 
 =========================================================
 Dependencies:-
-tensorflow==2.0
-keras
-Flask
-numpy
+1) tensorflow==2.0
+2) keras
+3) Flask
+4) numpy
 
 ==========================================================
-MobileNet version : 1.00.224
-Accuracy : 0.998
+Other Information :_
+1) MobileNet version : 1.00.224
+2)Accuracy : 0.998
