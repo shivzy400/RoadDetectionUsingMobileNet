@@ -1,22 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
 
- 
-    <div class="image-container">
-    <form action="/result" name="form" class="form-container" method="POST"  enctype="multipart/form-data">
-        <input type="file" name="inpFile" id="inpFile" accept="image/*"/>
-        <label for="inpFile" class="btn btn-success form-btn">
-            Choose Image
-        </label>
-        <div class="image-preview" id="imagePreview">
-            <img src="" class="image-preview__image">
-            <span class="image-preview__text">Press Choose File</span>
-        </div>
-        <div class="btn-container">
-            <input type="submit" value="Predict" onclick="showLoader()" class="btn btn-success form-btn">
-            <div class="loader" id="loader"></div>
-        </div>
-    </form>
+    
+            <div class="image-container center">
+                <form name="form" action="/result" class="form-container" method="POST"  enctype="multipart/form-data">
+                    <input type="file" name="inpFile" id="inpFile" accept="image/*"/>
+                    <label for="inpFile" class="btn btn-style">
+                        Choose Image
+                    </label>
+                    <label id ="file-name"></label>
+                    <div class="image-preview img-responsive" id="imagePreview">
+                        <img src="" class="image-preview__image img-responsive">
+                        <span class="image-preview__text">Select Image</span>
+                    </div>
+                    <div class="btn-container">
+                        <input type="submit" value="Predict" onclick="showLoader()" class="btn btn-style" id="btn-predict">
+                        <div class="loader" id="loader"></div>
+                    </div>
+                </form>
+                </div>
+                <span id="result"></span>
     </div>
+
 {% endblock %}
     

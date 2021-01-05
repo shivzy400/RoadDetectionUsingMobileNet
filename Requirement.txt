@@ -1,5 +1,4 @@
-tensorflow
-keras
+tensorflow==2.2.0
 numpy
 pandas
-Flask
+flask==1.1.2

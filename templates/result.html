@@ -1,14 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
+{% if flag == 1 %}
+<div class="container center">
 
-    {% if flag == 1 %}
-    <div class="result-container">
-        <span>Result : {{ result }}</span> <br>
-        <span>Confidence Level : {{ confidence }}</span>
-    
+            <p class="big-text">Result : {{ result }}</p>
+            <h2>Confidence Level : {{ confidence }}</h>
+</div>
+{% else %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 banner-info">
+            <h1>Oops!</h1>
+            <p class="big-text">{{ message }}</p>
+            <p class="subtext">May be you have not selected the image or Image does not exist.</p>
+            
+        </div>
     </div>
-    {% else %}
-        <span style="color: red;font-size: 18px;">File Not Found</span>
-    {% endif %}
-
+</div>
+{% endif %}
 {% endblock %}

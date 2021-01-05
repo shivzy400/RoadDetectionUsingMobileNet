@@ -1,6 +1,6 @@
-from keras import models
-from keras.preprocessing import image
-from keras.applications.mobilenet import preprocess_input
+from tensorflow.keras import models
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications.mobilenet import preprocess_input
 from werkzeug.utils import secure_filename
 import numpy as np
 import os
@@ -33,14 +33,16 @@ def upload_file():
    if request.method == 'POST':
       f = request.files['inpFile']
       if f :
+
         file_path = os.path.join(
                 BASE_DIR, 'uploads', secure_filename(f.filename))
         f.save(file_path)
+
         pred ,confidence  = model_predict(file_path)
         if pred == 0 :
-            result = 'Image has No Road'
+            result = 'No Road'
         elif pred == 1 :
-            result = 'Image has Road'
+            result = 'Road'
         return render_template('result.html',result = result , confidence = confidence , flag=1)
 
       else :
@@ -50,4 +52,4 @@ def upload_file():
 
 
 if __name__ == '__main__':
-    app.run(port=5001,debug=True)
+    app.run(debug=True,port=5001)

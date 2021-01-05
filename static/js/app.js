@@ -21,7 +21,10 @@ inpFile.addEventListener("change" , function() {
         previewImage.setAttribute("src","");
     }
 });
+
+const loader = document.getElementById("loader");
+const predict_btn = document.getElementById("btn-predict");
 var showLoader = function() {
-    const load = document.getElementById("loader");
-    load.style.display = "block";
+    loader.style.display = "block";
+    predict_btn.style.display = "none";
 }
